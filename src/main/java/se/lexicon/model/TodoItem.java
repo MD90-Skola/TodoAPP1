@@ -69,14 +69,17 @@ public class TodoItem {
         this.creator = creator;
     }
 
-    public String getSummary() {
-
-        return "{id: " + id +
-                ", title: " + title +
-                ", deadline: " + deadLine +
-                ", done: " + done + "}";
+    @Override
+    public String toString() {
+        return "TodoItem{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", taskDescriptiopn='" + taskDescriptiopn + '\'' +
+                ", deadLine=" + deadLine +
+                ", done=" + done +
+                ", creator=" + creator +
+                '}';
     }
-
 }
 
 

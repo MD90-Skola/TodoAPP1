@@ -1,13 +1,19 @@
 package se.lexicon.model;
 
+import java.util.Objects;
+
 public class Person {
 
-
+    // Fields
 
     private int id;
     private String firstName;
     private String lastName;
     private String email;
+    private Appuser credentials;
+
+
+    // Constructors
 
     public Person(int id, String firstName, String lastName, String email) {
         this.id = id;
@@ -21,6 +27,8 @@ public class Person {
     // getters Hämtar datan
 
 
+
+    // Setters, Getters, equal , hashCode and toString
 
     public int getId() {
         return id;
@@ -62,9 +70,34 @@ public class Person {
         }
         this.email = email;
     }
-    public String getSummary() {
-        return "{id: " + id + ", name: " + firstName + " " + lastName + ", email: " + email + "}";
+
+    public Appuser getCredentials() {
+        return credentials;
     }
 
+    public void setCredentials(Appuser credentials) {
+        this.credentials = credentials;
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return id == person.id && Objects.equals(firstName, person.firstName) && Objects.equals(lastName, person.lastName) && Objects.equals(email, person.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, firstName, lastName, email);
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }

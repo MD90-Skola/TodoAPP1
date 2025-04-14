@@ -50,23 +50,13 @@ public class TodoItemTask {
     }
 
 
-
-
-
-    public String getSummary() {
-        return "{id: " + id +
-                ", assigned: " + assigned +
-                ", assignee: " + (assignee != null ? assignee.getFirstName() + " " + assignee.getLastName() : "None") +
-                ", todoTitle: " + (todoItem != null ? todoItem.getTitle() : "No task") + "}";
+    @Override
+    public String toString() {
+        return "TodoItemTask{" +
+                "id=" + id +
+                ", assigned=" + assigned +
+                ", todoItem=" + todoItem +
+                ", assignee=" + assignee +
+                '}';
     }
-
-
-
-
-
-
-
-
-
-
 }
